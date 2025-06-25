@@ -2,7 +2,8 @@
 
 Flexomata is a simple framework for handling cellular automata simulation in C++ as a static library. The user may provide a "rule function" to operate per each grid cell along with an initial configuration. Flexomata can thereafter apply the rule to each cell and offers access to the evolved state of the grid.
 
-> **Note**: In spite of being fully functional as is, Flexomata is still under initial development. Notably, its API could undergo multiple minor changes prior to finalization.
+> [!WARNING]
+> In spite of being fully functional as is, Flexomata is still under initial development. Notably, its API could undergo multiple minor changes prior to finalization.
 
 # Installation
 
