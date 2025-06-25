@@ -38,7 +38,7 @@ class SimulationScene {
     Grid grid;
     std::unique_ptr<DeferredConfigLoader> deferred_configloader;
 
-    FlexomataTypes::RuleFunc rule;
+    Flexomata::Types::RuleFunc rule;
 
 public:
     const Grid* get_grid() const;
@@ -47,7 +47,7 @@ public:
     void enforce_rule_once();
     void enforce_rule(const size_t by_steps);
 
-    void set_rule(const FlexomataTypes::RuleFunc& rule);
+    void set_rule(const Flexomata::Types::RuleFunc& rule);
 
     SimulationScene(const int argc, char** argv);
 

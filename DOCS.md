@@ -18,7 +18,7 @@ Creates a separate "scene" for a particular simulation, with predefined Grid dim
 Get access to the associated `Grid` object.
 - `DeferredConfigLoader* get_deferred_configloader()`:
 Get access to the `DeferredConfigLoader` object. Can be used to specify the config programmatically for it to be manually loaded through `DeferredConfigLoader::load_config_into_target`.
-- `void set_rule(const FlexomataTypes::RuleFunc& rule)`:
+- `void set_rule(const Flexomata::Types::RuleFunc& rule)`:
 Set the simulation rule. This will determine the specific cellular automata that is being simulated.
 - `void enforce_rule_once()`:
 Apply the simulation rule to the grid exactly once.

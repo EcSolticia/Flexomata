@@ -28,7 +28,7 @@ int main() {
 
         // Represent the rules of Conway's Game of Life
         // https://conwaylife.com/wiki/Conway%27s_Game_of_Life#Rules
-        FlexomataTypes::RuleFunc game_of_life = [grid_ptr](const size_t x, const size_t y) -> size_t {
+        Flexomata::Types::RuleFunc game_of_life = [grid_ptr](const size_t x, const size_t y) -> size_t {
             const size_t neighbor_count = grid_ptr->get_neighbor_count(x, y, 1);
             const size_t alive = grid_ptr->get_pixel(x, y);
             if (alive) {

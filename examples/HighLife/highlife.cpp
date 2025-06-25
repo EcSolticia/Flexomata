@@ -22,7 +22,7 @@ int main() {
         
         const Flexomata::Grid* grid_ptr = sim.get_grid();
 
-        FlexomataTypes::RuleFunc highlife = [grid_ptr](size_t x, size_t y) -> size_t {
+        Flexomata::Types::RuleFunc highlife = [grid_ptr](size_t x, size_t y) -> size_t {
             const size_t neighbor_count = grid_ptr->get_neighbor_count(x, y, 1);
             const size_t alive = grid_ptr->get_pixel(x, y);
             if (alive) {

@@ -28,7 +28,7 @@ int main() {
 
         const Flexomata::Grid* grid_ptr = sim.get_grid();
 
-        FlexomataTypes::RuleFunc rule30 = [grid_ptr](size_t x, size_t y) -> size_t {
+        Flexomata::Types::RuleFunc rule30 = [grid_ptr](size_t x, size_t y) -> size_t {
             const size_t left = grid_ptr->get_neighbor(x, y, Flexomata::Grid::LEFT);
             const size_t right = grid_ptr->get_neighbor(x, y, Flexomata::Grid::RIGHT);
             const size_t center = grid_ptr->get_pixel(x, y);

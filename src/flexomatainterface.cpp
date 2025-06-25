@@ -26,7 +26,7 @@ const std::string Flexomata::Arguments::get_first_argument(const int argc, char*
         }
 
         // assume argv[1] to be the configuration file path
-        // currently ignores additional FlexomataArguments
+        // currently ignores additional arguments
         if (argc > 2) {
             std::cout << "Flexomata only accepts one command-line argument. The rest will be ignored.\n";
         }
@@ -64,7 +64,7 @@ DeferredConfigLoader* SimulationScene::get_deferred_configloader() {
     return this->deferred_configloader.get();
 }
 
-void SimulationScene::set_rule(const FlexomataTypes::RuleFunc& rule) {
+void SimulationScene::set_rule(const Flexomata::Types::RuleFunc& rule) {
     this->rule = rule;
 }
 

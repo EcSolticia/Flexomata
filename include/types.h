@@ -1,6 +1,8 @@
 #pragma once
 #include <functional>
 
-namespace FlexomataTypes {
-    typedef std::function<size_t(size_t, size_t)> RuleFunc;
+namespace Flexomata {
+    namespace Types {
+        typedef std::function<size_t(size_t, size_t)> RuleFunc;
+    }
 }
