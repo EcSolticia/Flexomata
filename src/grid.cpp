@@ -7,6 +7,10 @@ bool Grid::is_initialized() const {
 }
 
 size_t Grid::get_pixel(const size_t x, const size_t y) const {
+    if (!this->is_initialized()) {
+        throw std::runtime_error("Attempting to get pixel in a non-initialized Grid.");
+    }
+    
     const size_t idx = y * width + x;
     return this->data[idx];
 }
@@ -64,7 +68,7 @@ void Grid::print_data() const {
     const size_t max_i = this->get_width();
 
     if (!are_init_vars(max_i, max_j)) {
-        throw std::runtime_error("Grid not initialized.");
+        throw std::runtime_error("Grid not initialized. Nothing to print.");
     }
 
     for (size_t j = 0; j < max_j; ++j) {
@@ -88,6 +92,10 @@ size_t Grid::get_height() const {
 }
 
 void Grid::set_data(const std::vector<size_t>& dummy_data) {
+    if (!this->is_initialized()) {
+        throw std::runtime_error("Attempting to set data in a non-initialized Grid.");
+    }
+
     size_t size = this->height * this->width;
 
     if (dummy_data.size() < size) {
@@ -99,6 +107,10 @@ void Grid::set_data(const std::vector<size_t>& dummy_data) {
 }
 
 void Grid::set_pixel(const size_t x, const size_t y, const size_t value) {
+    if (!this->is_initialized()) {
+        throw std::runtime_error("Attempting to set pixel in a non-initialized Grid.");
+    }
+
     if (this->width <= x || this->height <= y) {
         throw std::out_of_range("Attempting to assign state value to a non-existent Grid coordinate.");
     }
@@ -109,6 +121,9 @@ void Grid::set_pixel(const size_t x, const size_t y, const size_t value) {
 }
 
 void Grid::initialize_grid(const size_t width, const size_t height) {
+    if (this->is_initialized()) {
+        throw std::runtime_error("Attempting to initialize Grid twice.");
+    }
 
     this->width = width;
     this->height = height;

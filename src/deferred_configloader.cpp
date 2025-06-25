@@ -9,9 +9,8 @@ void DeferredConfigLoader::load_config_into_target() const {
         throw std::runtime_error("Cannot load config into non-existent target");
     }
 
-    target_grid_ptr->pre_init_run([&](){
-        target_grid_ptr->initialize_grid(intermediary_grid.get_width(), intermediary_grid.get_height());
-    });
+    target_grid_ptr->initialize_grid(intermediary_grid.get_width(), intermediary_grid.get_height());
+
     target_grid_ptr->set_data(intermediary_grid.get_data());
 }
 

@@ -52,12 +52,8 @@ void ConfigLoader::load_grid_data(const std::string& stringset, Grid* grid_ptr) 
         }
     }
 
-    grid_ptr->pre_init_run([&](){
-        grid_ptr->initialize_grid(reading_x, reading_y);
-    });
-    grid_ptr->post_init_run([&](){
-        grid_ptr->set_data(dummy_data);
-    });
+    grid_ptr->initialize_grid(reading_x, reading_y);
+    grid_ptr->set_data(dummy_data);
 
 }
 

@@ -35,7 +35,7 @@ public:
     void print_data() const;
     const std::vector<size_t> get_data() const;
 
-    // Should be called using the post_init_run wrapper:
+    // Use post-init
     void set_data(const std::vector<size_t>& dummy_data);
     
     size_t get_pixel(const size_t x, const size_t y) const;
@@ -44,36 +44,9 @@ public:
     size_t get_neighbor(const size_t x, const size_t y, enum Direction dir) const;
     
     size_t get_neighbor_count(const size_t x, const size_t y, const size_t of_state) const;
-    
-    template <typename Func, typename... Args>
-    auto post_init_run(Func&& func, Args&&... args)
-        -> decltype(std::forward<Func>(func)(std::forward<Args>(args)...)) {
-        
-        if (!is_initialized()) {
-            throw std::runtime_error("Grid not initialized.");
-        }
 
-        return std::forward<Func>(func)(std::forward<Args>(args)...);
-    }
-
-    // Should be called using the pre_init_run wrapper:
+    // Use pre-init
     void initialize_grid(const size_t width, const size_t height);
-
-    template <typename Func, typename... Args>
-    auto pre_init_run(Func&& func, Args&&... args)
-        -> decltype(std::forward<Func>(func)(std::forward<Args>(args)...)) {
-        
-        if (is_initialized()) {
-            throw std::runtime_error("Grid already initialized.");
-        }
-
-        return std::forward<Func>(func)(std::forward<Args>(args)...);
-    }
-
-    /**
-     * Calling the const public members with these wrappers is not necessary when
-     * referring to it through SimulationScene. That class initializes it. 
-     */
 
     Grid();
 };
