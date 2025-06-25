@@ -3,7 +3,7 @@ cmake_minimum_required(VERSION 3.10)
 project(Flexomata CXX)
 
 add_library(${PROJECT_NAME} STATIC
-    src/flexomatainterface.cpp
+    src/flexomata.cpp
     src/grid.cpp
     src/configloader.cpp
     src/deferred_configloader.cpp
