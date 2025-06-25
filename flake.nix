@@ -7,22 +7,31 @@
 
   outputs = { self , nixpkgs ,... }: let
     system = "x86_64-linux";
+    pkgs = import nixpkgs {
+      inherit system;
+    };
+
+    fullBuildTestScript = import ./full-build-test.nix { inherit pkgs; };
+
   in {
-    devShells."${system}".default = let
-      pkgs = import nixpkgs {
-        inherit system;
-      };
-    in pkgs.mkShell {
-      # create an environment with nodejs_18, pnpm, and yarn
+    packages.${system}.full-build-test = fullBuildTestScript;
+
+    devShells."${system}".default = pkgs.mkShell {
+      
       packages = with pkgs; [
-	      gcc14
+        gcc14
         cmake
         gdb
+
+        fullBuildTestScript
       ];
 
       shellHook = ''
-	      echo 'Flexomata Dev Environment'
+        echo 'Flexomata Dev Environment'
       '';
+
     };
-  };
+
+    };
+
 }
