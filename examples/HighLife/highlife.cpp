@@ -45,7 +45,7 @@ int main() {
         }
 
     } catch (const std::exception& e) {
-        FlexomataErrors::handle_exception(e);
+        Flexomata::Errors::handle_exception(e);
     }
 
     return 0;

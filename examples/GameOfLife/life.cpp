@@ -52,7 +52,7 @@ int main() {
 
     } catch (const std::exception& e) {
         // Self-explanatory: handle exceptions
-        FlexomataErrors::handle_exception(e);
+        Flexomata::Errors::handle_exception(e);
     }
 
     return 0;

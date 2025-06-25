@@ -11,18 +11,22 @@
 
 #include "grid.h"
 
-namespace FlexomataArguments {
+namespace Flexomata {
+    namespace Arguments {
 
-    const std::string get_first_argument(const int argc, char** argv);
+        const std::string get_first_argument(const int argc, char** argv);
 
-    void handle_file_existence(const std::string& path);
+        void handle_file_existence(const std::string& path);
 
-    const std::string get_valid_argument(const int argc, char** argv);
+        const std::string get_valid_argument(const int argc, char** argv);
 
+    }
 }
 
-namespace FlexomataErrors {
-    void handle_exception(const std::exception& e);
+namespace Flexomata {
+    namespace Errors {
+        void handle_exception(const std::exception& e);
+    }
 }
 
 namespace Flexomata {

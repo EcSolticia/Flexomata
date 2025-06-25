@@ -48,7 +48,7 @@ int main() {
         }
         
     } catch (const std::exception& e) {
-        FlexomataErrors::handle_exception(e);
+        Flexomata::Errors::handle_exception(e);
     }
 
     // Optional for interactive shells. Ensures that the console window on Windows does not close immediately.

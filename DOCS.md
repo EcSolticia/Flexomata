@@ -2,14 +2,15 @@
 ## Accessible Classes and Namespaces
 
 ### `Flexomata` (Namespace)
-Encapsulates the core classes of Flexomata. 
-These classes include:
+Encapsulates everything pertaining to the library.
+
+Classes within the namespace include:
     - `SimulationScene`.
     - `Grid`.
     - `DeferredConfigLoader`
     - `ConfigLoader` (an internal class used to handle config loading).
+
 ### `SimulationScene` (`flexomata.h`)
-Belongs to the `Flexomata` namespace.
 
 Creates a separate "scene" for a particular simulation, with predefined Grid dimensions and an initial configuration. Is the entry point for all pertinent simulation functionalities. Other accessible classes can only be accessed through an instance of `SimulationScene`.
 #### Accessible Member Functions
@@ -39,13 +40,13 @@ Constructor to initialize the scene without a predefiend configuration. Creates 
 - To use Flexomata through the `SimulationScene` class, you have to include and only include `flexomata.h` from the include directory. 
 - It may be possible to achieve a lower-level control over the behavior of the simulation by accessing the other classes more directly, but that is not tested. Furthermore, this is not something Flexomata is designed for and around, and hence is not documented as of now.
 
-### `FlexomataTypes` (`types.h`)
-Namespace for Flexomata-specific types.
+### `Types` (`types.h`)
+Namespace for Flexomata-specific types. Defined within the scope of `Flexomata` as `Flexomata::Types`.
 - `typedef std::function<size_t(size_t, size_t)> RuleFunc`:
 Type for functions that specify the cellular automata rules.
 
-### `FlexomataErrors` (`flexomata.h`)
-Namespace for error-handling.
+### `Errors` (`flexomata.h`)
+Namespace for error-handling. Defined within the scope of `Flexomata` as `Flexomata::Errors`.
 #### Accessible Member Functions
 - `void handle_exception(const std::exception& e)`:
 Handles passed in exception. It is expected that the code involving interactions with Flexomata is structure in the following manner:
@@ -53,12 +54,11 @@ Handles passed in exception. It is expected that the code involving interactions
 try {
     // Interact with Flexomata here
 } catch (const std::exception& e) {
-    FlexomataErrors::handle_exception(e);
+    Flexomata::Errors::handle_exception(e);
 }
 ```
 
 ### `Grid` (`grid.h`)
-Belongs to the `Flexomata` namespace.
 
 Handles the cellular automata grid. Accessible member functions allow reading the current state and dimensions.
 
@@ -93,7 +93,6 @@ Get the value/state of a specific neighbor of a particular cell location on the 
 Get the number of neighboring cells of a specific value/state.
 
 ### `DeferredConfigLoader` (`deferred_configloader.h`)
-Belongs to the `Flexomata` namespace.
 
 #### Accessible Member Functions
 - `void set_config_pixel(const size_t x, const size_t y, const size_t value)`:
