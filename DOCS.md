@@ -5,10 +5,10 @@
 Encapsulates everything pertaining to the library.
 
 Classes within the namespace include:
-    - `SimulationScene`.
-    - `Grid`.
-    - `DeferredConfigLoader`
-    - `ConfigLoader` (an internal class used to handle config loading).
+- `SimulationScene`
+- `Grid`
+- `DeferredConfigLoader`
+- `ConfigLoader` (an internal class used to handle config loading)
 
 ### `SimulationScene` (`flexomata.h`)
 
