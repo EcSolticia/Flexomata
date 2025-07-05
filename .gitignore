@@ -34,6 +34,9 @@
 # Build directory
 build
 
+# Built docs
+output_docs.html
+
 # VSCode config
 .vscode
 
