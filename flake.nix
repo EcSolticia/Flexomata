@@ -11,11 +11,10 @@
       inherit system;
     };
 
-    fullBuildTestScript = import ./full-build-test.nix { inherit pkgs; };
+    fullBuildTestScript = import ./scripts/full-build-test.nix { inherit pkgs; };
+    buildDocsScript = import ./scripts/build-docs.nix { inherit pkgs; };
 
   in {
-    packages.${system}.full-build-test = fullBuildTestScript;
-
     devShells."${system}".default = pkgs.mkShell {
       
       packages = with pkgs; [
@@ -23,6 +22,7 @@
         cmake
         gdb
 
+	      buildDocsScript
         fullBuildTestScript
       ];
 
@@ -32,6 +32,6 @@
 
     };
 
-    };
+  };
 
 }

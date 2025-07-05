@@ -1,6 +1,8 @@
 { pkgs }:
 
 pkgs.writeShellScriptBin "full-build-test" ''
+  set -eu
+
   rm -rf build
   
   cmake -S . -B build
@@ -12,6 +14,8 @@ pkgs.writeShellScriptBin "full-build-test" ''
   do
     example_dir="./examples/''${example}"
     example_build_dir="''${example_dir}/build"
+
+    rm -rf "''${example_build_dir}"
 
     cmake -S "''${example_dir}" -B "''${example_build_dir}"
     cmake --build "''${example_build_dir}"
