@@ -1,0 +1,105 @@
+body {
+    background-color: #1e1e1e;
+    color: #e0e0e0;
+    font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+    /*padding: 2rem 6vw;*/
+    line-height: 1.6;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+header {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 0.25rem;
+    color: #ffffff;
+}
+
+h1 {
+    font-size: 2.5rem;
+    color: #ffffff;
+    margin-bottom: 0;
+}
+
+header p {
+    font-size: 1.2rem;
+    color: #aaaaaa;
+}
+
+.title {
+    color: #ffffff;
+    text-decoration: underline wavy 2px #ffb74d;
+    margin-top: 0;
+}
+
+#TOC {
+    display: flex;
+    justify-content: center;
+    background-color: #2c2c2c;
+    /*padding: 1rem;*/
+    /*margin-bottom: 2rem;*/
+}
+/*
+#TOC a {
+    margin: 0 1rem;
+    color: #90caf9;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+#TOC a:hover {
+    text-decoration: underline;
+    color: #bbdefb;
+    text-decoration: underline #ffb74d;
+}*/
+
+p {
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    color: #d0d0d0;
+}
+
+h2 {
+    text-decoration: underline wavy #ffb74d 2px;
+    font-size: 1.75rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    color: #ffffff;
+}
+
+h3 {
+    text-decoration: underline double #ffb74d;
+    font-size: 1.4rem;
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+    color: #f0f0f0;
+}
+
+h4 {
+    text-decoration: underline #ffb74d;
+    font-size: 1.2rem;
+    margin-top: 1.2rem;
+    margin-bottom: 0.5rem;
+    color: #e0e0e0;
+}
+
+pre, code {
+    background-color: #2e2e2e;
+    color: #f8f8f2;
+    padding: 0.1rem;
+    border-radius: 5px;
+    font-family: monospace;
+    font-size: 0.95rem;
+    overflow-x: auto;
+}
+
+a {
+    color: #81fa9b;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+a:hover {
+    text-decoration: underline #ffb74d;
+}

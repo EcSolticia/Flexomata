@@ -1,4 +1,7 @@
 # Usage Documentation
+
+[Flexomata](https://github.com/EcSolticia/Flexomata) is a simple framework for handling cellular automata simulation in C++ as a static library. The user may provide a "rule function" to operate per each grid cell along with an initial configuration. Flexomata can thereafter apply the rule to each cell and offers access to the evolved state of the grid.
+
 ## Accessible Classes and Namespaces
 
 ### `Flexomata` (Namespace)
@@ -134,3 +137,7 @@ GRID
 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
 END_GRID
 ```
+
+---
+
+Built using [Pandoc](https://github.com/jgm/Pandoc) duck-taped with additional HTML/JS injections through [a Nix-based shell script](./../scripts/build-docs/build-docs.nix). Copyright (c) 2025 EcSolticia.
