@@ -11,8 +11,8 @@
       inherit system;
     };
 
-    fullBuildTestScript = import ./scripts/full-build-test.nix { inherit pkgs; };
-    buildDocsScript = import ./scripts/build-docs.nix { inherit pkgs; };
+    fullBuildTestScript = import ./full-build-test.nix { inherit pkgs; };
+    buildDocsScript = import ./docs/build-docs.nix { inherit pkgs; };
 
   in {
     devShells."${system}".default = pkgs.mkShell {
@@ -21,6 +21,8 @@
         gcc14
         cmake
         gdb
+
+        pandoc
 
 	      buildDocsScript
         fullBuildTestScript

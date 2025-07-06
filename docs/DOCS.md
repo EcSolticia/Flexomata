@@ -1,10 +1,12 @@
-# Usage Documentation
+[Flexomata](https://github.com/EcSolticia/Flexomata) is a simple framework for handling cellular automata simulation in C++ as a static library. The user may provide a "rule function" to operate per each grid cell along with an initial configuration. Flexomata can thereafter apply the rule to each cell and offers access to the evolved state of the grid.
+
 ## Accessible Classes and Namespaces
 
 ### `Flexomata` (Namespace)
 Encapsulates everything pertaining to the library.
 
 Classes within the namespace include:
+
 - `SimulationScene`
 - `Grid`
 - `DeferredConfigLoader`
@@ -13,6 +15,7 @@ Classes within the namespace include:
 ### `SimulationScene` (`flexomata.h`)
 
 Creates a separate "scene" for a particular simulation, with predefined Grid dimensions and an initial configuration. Is the entry point for all pertinent simulation functionalities. Other accessible classes can only be accessed through an instance of `SimulationScene`.
+
 #### Accessible Member Functions
 - `const Grid* get_grid() const`:
 Get access to the associated `Grid` object.
@@ -25,9 +28,8 @@ Apply the simulation rule to the grid exactly once.
 - `void enforce_rule(const size_t by_steps)`:
 Apply the simuation rule to the grid exactly `by_steps` times.
 - `SimulationScene(const int argc, char** argv)`:
-Constructor to initialize the scene using initial configuration specified in a file from the terminal, specifically the second argument. Example: `./FlexomataApp path/to/config/file.txt`.
+Constructor to initialize the scene using initial configuration specified in a file from the terminal, specifically the second argument. Example: `./FlexomataApp path/to/config/file.txt`. In the absence of the argument, Flexomata looks for `config.txt` in the current working directory, and if it exists, attempts to load the initial configuration from that.
 
-In the absence of the argument, Flexomata looks for `config.txt` in the current working directory, and if it exists, attempts to load the initial configuration from that.
 - `SimulationScene(const std::string& config_text, construct_from_text)`: 
 Constructor to initialize the scene using initial configuration specified in a string.
 - `SimulationScene(const std::string& config_path, construct_from_predefined_path)`:
@@ -42,11 +44,13 @@ Constructor to initialize the scene without a predefiend configuration. Creates 
 
 ### `Types` (`types.h`)
 Namespace for Flexomata-specific types. Defined within the scope of `Flexomata` as `Flexomata::Types`.
+
 - `typedef std::function<size_t(size_t, size_t)> RuleFunc`:
 Type for functions that specify the cellular automata rules.
 
 ### `Errors` (`flexomata.h`)
 Namespace for error-handling. Defined within the scope of `Flexomata` as `Flexomata::Errors`.
+
 #### Accessible Member Functions
 - `void handle_exception(const std::exception& e)`:
 Handles passed in exception. It is expected that the code involving interactions with Flexomata is structure in the following manner:
@@ -63,6 +67,7 @@ try {
 Handles the cellular automata grid. Accessible member functions allow reading the current state and dimensions.
 
 Exhibits a "toroidal", wrap-around behavior on the boundaries.
+
 #### Enums
 ```C++
 enum Direction {
