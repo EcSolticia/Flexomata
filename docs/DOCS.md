@@ -137,7 +137,3 @@ GRID
 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
 END_GRID
 ```
-
----
-
-Built using [Pandoc](https://github.com/jgm/Pandoc) duck-taped with additional HTML/JS injections through [a Nix-based shell script](./../scripts/build-docs/build-docs.nix). Copyright (c) 2025 EcSolticia.
