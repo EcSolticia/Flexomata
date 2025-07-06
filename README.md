@@ -202,7 +202,7 @@ You may wish to run the executable to see if it behaves as expected.
 > The program we built here simulates Conway's Game of Life on our initial configuration Grid and pattern. Press enter to simulate the next step. Pressing Ctrl + C, or a similar key combination depending on your terminal and platform can be used to terminate the program.
 
 # Reference
-For a reference on the key namespaces, classes, accessible member functions, and Flexomata's configuration parsing, see [DOCS.md](DOCS.md).
+For a reference on the key namespaces, classes, accessible member functions, and Flexomata's configuration parsing, see [DOCS.md](docs/DOCS.md).
 
 # License
 Flexomata is distributed under the [MIT License](https://github.com/EcSolticia/Flexomata/blob/main/LICENSE).
