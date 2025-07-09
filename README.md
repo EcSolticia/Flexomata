@@ -181,21 +181,22 @@ int main() {
 ```
 
 ### 4. Compile your executable and run!
-In your project directory, create a new directory named `build`, change directory to `build` (`cd build`), and run
+In your project directory, create a new directory named `build` and change your current working directory to it.
+
+Run the following command on Linux/MacOS to generate the Makefiles
 ```
 cmake ..
 ```
-on Linux/MacOS to generate the Makefiles, and
+and, the following if on Windows (MinGW)
 ```
 cmake -G "MinGW Makefiles" ..
 ```
-On Windows to generate the MinGW Makefiles.
 
 Finally, run
 ```
 make
 ```
-In the `build` directory, which should link the library and compile your executable.
+this should link the library and compile your executable.
 
 You may wish to run the executable to see if it behaves as expected.
 
